@@ -1,0 +1,28 @@
+body{
+    font-family: 'Mali', cursive;
+    background-color: rgb(142, 142, 189);
+}
+
+#div-display,#div-form{
+    margin-top:15px;
+}
+
+h4{
+    color:blue;
+}
+
+tr {
+    border-bottom: 1px solid #cccccc;
+}
+
+.jumbotron {
+    text-align: center;
+    border-radius: 10px;
+    color:blue;
+}
+
+@media screen and (max-width: 480px) {
+    .container{
+        width: 550px;
+    }
+}

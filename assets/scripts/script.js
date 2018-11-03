@@ -55,11 +55,22 @@ var getTimeObj = function(data){
 $("#submit").on("click", function () {
    
     event.preventDefault();
-    database.ref().push({
-        name: $("#text-train-name").val(),
-        destination: $("#text-destination").val().trim(),
-        time: $("#text-time").val().trim(),
-        frequency: $("#text-frequency").val().trim()
-    });
+    var trainName = $("#text-train-name").val().trim();
+    var destination = $("#text-destination").val().trim();
+    var trainTime = $("#text-time").val().trim();
+    var trainFrequency = $("#text-frequency").val().trim();
+
+    if(trainName.length === 0 || destination.length === 0 || trainTime.length === 0 || trainFrequency.length ===0){
+        alert("Train name, Destination, Train Time & Frequency are Mandatory");
+    }else{
+        console.log("push to firebase");
+        database.ref().push({
+            name: trainName,
+            destination: destination,
+            time: trainTime,
+            frequency: trainFrequency
+        });
+
+    }
 
 });
